@@ -172,7 +172,9 @@ const handleTabClick = (tab) => {
   const fetchVideoComments = async () => {
 
     try {
-        const response = await axios.get(baseURL+`/api/students/video_comments/${vid}/`);
+        const response = await axios.get(baseURL+`/api/students/video_comments/${vid}/`,{headers: {
+          'authorization': `Bearer ${token}`,  
+        }});
         const comments = response.data;
         setComments(response.data);
         console.log('Comments:', comments);
@@ -218,7 +220,9 @@ const handleReplyClick=(commentId)=>{
   const fetchReplies=async(comment_id)=>{
     try{
       console.log('comment id.....',comment_id)
-      const response=await axios.get(baseURL+`/api/students/getreply/${comment_id}/`)
+      const response=await axios.get(baseURL+`/api/students/getreply/${comment_id}/`,{headers: {
+        'authorization': `Bearer ${token}`,  
+      }})
       console.log("replies are........",response.data)
       setRepliesMap((prevReplies) => ({
         ...prevReplies,

@@ -50,7 +50,7 @@ function CommunityChat() {
         setMessages([])
 
        // Open WebSocket connection
-   websocket.current=new WebSocket(`ws://localhost:8000/ws/chat/${communityroom}/${user_id}/`);
+   websocket.current=new WebSocket(`${baseURL}/ws/chat/${communityroom}/${user_id}/`);
 
    // Handle incoming messages
    websocket.current.onmessage=function(event){

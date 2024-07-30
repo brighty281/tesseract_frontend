@@ -57,7 +57,7 @@ function ChatwithTeacher() {
 
     useEffect(()=>{
     // Open WebSocket connection
-    websocket.current=new WebSocket(`ws://localhost:8000/ws/chat/personal/${user_id}/${course_id}/${user_id}/`);
+    websocket.current=new WebSocket(`${baseURL}/ws/chat/personal/${user_id}/${course_id}/${user_id}/`);
 
     // Handle incoming messages
     websocket.current.onmessage=function(event){

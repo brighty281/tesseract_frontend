@@ -73,7 +73,7 @@ useEffect(()=>{
 
   useEffect(()=>{
     // Open WebSocket connection
-   websocket.current=new WebSocket(`ws://localhost:8000/ws/chat/personal/${student_id}/${course_id}/${teacher_id}/`);
+   websocket.current=new WebSocket(`${baseURL}/ws/chat/personal/${student_id}/${course_id}/${teacher_id}/`);
     setMessages([])
     // Handle incoming messages
    websocket.current.onmessage=function(event){

@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 function LoginPage() {
   const [formError, setFormError] = useState([])
   const [message, setmessage] = useState(null)
-  const { REACT_APP_GOOGLE_CLIENT_ID, REACT_APP_BASE_URL } =process.env;
+  const { REACT_APP_GOOGLE_CLIENT_ID, REACT_APP_BASE_URL,REACT_APP_REDIRECT_URL } =process.env;
   const location = useLocation();
   // const baseURL='http://127.0.0.1:8000'
   const baseURL = process.env.REACT_APP_BASE_URL;
@@ -113,16 +113,17 @@ function LoginPage() {
 
   const onGoogleLoginSuccess = ()=>{
     const GOOGLE_AUTH_URL = 'https://accounts.google.com/o/oauth2/v2/auth';
-    const REDIRECT_URI = 'api/users/auth/google/'
+    // const REDIRECT_URI = 'api/users/auth/google/'
     const scope = [
         'https://www.googleapis.com/auth/userinfo.email',
         'https://www.googleapis.com/auth/userinfo.profile'
     ].join(' ');
-
+  
+    
     const params = {
         response_type: 'code',
         client_id: REACT_APP_GOOGLE_CLIENT_ID,
-        redirect_uri: `${REACT_APP_BASE_URL}/${REDIRECT_URI}`,
+        redirect_uri: REACT_APP_REDIRECT_URL,
         prompt: 'select_account',
         access_type: 'offline',
         scope

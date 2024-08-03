@@ -25,6 +25,10 @@ import ChatTeacherslist from '../../Pages/studentpages/messages/ChatTeacherslist
 import ChatCommunitylist from '../../Pages/studentpages/messages/ChatCommunitylist'
 import StudentCommunityChat from '../../Pages/studentpages/messages/StudentCommunityChat'
 import ChatwithTeacher from '../../Pages/studentpages/messages/ChatwithTeacher'
+import GoogleAuth from '../../Pages/studentpages/GoogleAuth'
+import SocialAuth from '../../Pages/studentpages/SocialAuth'
+import GoogleHome from '../../Pages/studentpages/GoogleHome'
+
 
 function Studentwrapper() {
   const dispatch=useDispatch();
@@ -61,6 +65,10 @@ function Studentwrapper() {
         <Routes>
             <Route path="/" element={<Mylandingpage/>}/>
             <Route path="login" element={<LoginPage/>} />
+            <Route path="googleauth" element={<GoogleAuth/>}/>
+            <Route path="google" element={<SocialAuth/>}/>
+            <Route path="googlehome" element={<GoogleHome/>} />
+
             
             <Route path="signup" element={<Registrationpage/>} />
             <Route path="otp" element={<StudentOtp/>} />

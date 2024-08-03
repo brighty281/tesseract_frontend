@@ -102,7 +102,7 @@ function AdminStudentlist() {
       
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Students List</h1>
+      <h1 className="text-2xl font-bold text-white mb-6">Students List</h1>
       
       <div className='flex items-center justify-center mb-6'>
         <div className="flex items-center border border-gray-500 bg-white rounded-lg">

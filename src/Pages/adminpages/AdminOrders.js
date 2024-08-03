@@ -32,7 +32,7 @@ function AdminOrders() {
     <div>
       
       <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">All Orders</h1>
+      <h1 className="text-2xl font-bold text-white mb-6">All Orders</h1>
               <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                 <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                 <table className="min-w-full leading-normal">

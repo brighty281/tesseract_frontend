@@ -35,7 +35,7 @@ function ProfileEdit() {
 
     const fetchUserData=async()=>{
         try{
-            const res=await axios.get(baseURL+ 'api/students/user_details/',{
+            const res=await axios.get(baseURL+ '/api/students/user_details/',{
                 headers: {
                     'authorization': `Bearer ${token}`,
                     'Accept' : 'application/json',
@@ -133,8 +133,9 @@ function ProfileEdit() {
                     linkedinurl: formData.linkedinurl,
                     fburl: formData.fburl,
                     about: formData.about,
-                    profile_pic: formData.profilePic ? URL.createObjectURL(formData.profilePic) : null
+                    profile_pic: formData.profilePic instanceof File ? URL.createObjectURL(formData.profilePic) : formData.profilePic
                 }));
+    
                 navigate('/profile'); // Navigate to profile page after successful save
             }
         } catch (error) {
@@ -241,6 +242,7 @@ function ProfileEdit() {
                     ref={fileInputRef}
                     type="file"
                     id="fileInput"
+                    accept="image/*"
                     className="hidden"
                     onChange={handleFileChange}
                   />

@@ -81,7 +81,7 @@ function Addvideos() {
           if (fileInputRef.current) {
             fileInputRef.current.value = ''; // Clear the file input field
           }
-          toast.success('New Video Added');
+          toast.success('New Video Added'); 
           navigate(`/teacher/add_video/${id}`);
         }
           
@@ -127,6 +127,7 @@ function Addvideos() {
               type="file" 
               name="video"
               onChange={handleFileChange}
+              accept="video/*" 
               ref={fileInputRef}
               className='w-full p-3 bg-gray-700 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500'
             />

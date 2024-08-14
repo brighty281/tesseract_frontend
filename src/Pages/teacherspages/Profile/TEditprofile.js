@@ -34,7 +34,7 @@ function TEditprofile() {
 
     const fetchUserData=async()=>{
         try{
-            const res=await axios.get(baseURL+ 'api/students/user_details/',{
+            const res=await axios.get(baseURL+ '/api/students/user_details/',{
                 headers: {
                     'authorization': `Bearer ${token}`,
                     'Accept' : 'application/json',
@@ -109,7 +109,7 @@ function TEditprofile() {
         }
     
         try {
-            const res = await axios.post(baseURL + 'api/students/user_details_update/', form_data, {
+            const res = await axios.post(baseURL + '/api/students/user_details_update/', form_data, {
                 headers: {
                     'content-type': 'multipart/form-data',
                     'authorization': `Bearer ${token}`,
@@ -132,7 +132,7 @@ function TEditprofile() {
                     linkedinurl: formData.linkedinurl,
                     fburl: formData.fburl,
                     about: formData.about,
-                    profile_pic: formData.profilePic ? URL.createObjectURL(formData.profilePic) : null
+                    profile_pic: formData.profilePic instanceof File ? URL.createObjectURL(formData.profilePic) : formData.profilePic
                 }));
                 navigate('/teacher/profile'); // Navigate to profile page after successful save
             }
@@ -239,6 +239,7 @@ function TEditprofile() {
                       ref={fileInputRef}
                       type="file"
                       id="fileInput"
+                      accept="image/*"
                       className="hidden"
                       onChange={handleFileChange}
                     />

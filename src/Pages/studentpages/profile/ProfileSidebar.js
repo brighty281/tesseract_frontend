@@ -27,9 +27,11 @@ function ProfileSidebar() {
         </Link>
 
         <hr className="my-6 border-t border-gray-300" />
+        <Link to="/my_courses">
           <div className="flex flex-col items-center mb-4">
             <span className="text-gray-700 text-lg font-bold tracking-wider mb-2">Enrolled Courses</span>
           </div>
+        </Link>
        
 
         <hr className="my-6 border-t border-gray-300" />

@@ -28,10 +28,12 @@ function ProfileSidebar() {
           </div>
         </Link>
 
-        <hr className="my-6 border-t border-gray-300" />
-          <div className="flex flex-col items-center mb-4">
-            <span className="text-white text-lg font-bold tracking-wider mb-2">Enrolled Courses</span>
-          </div>
+        <Link to="/teacher/course_list" >
+          <hr className="my-6 border-t border-gray-300" />
+            <div className="flex flex-col items-center mb-4">
+              <span className="text-white text-lg font-bold tracking-wider mb-2">Enrolled Courses</span>
+            </div>
+        </Link>
        
 
         <hr className="my-6 border-t border-gray-300" />

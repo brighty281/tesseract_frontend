@@ -47,18 +47,19 @@ function Studentheader() {
     
     <div className='flex-1 flex justify-end space-x-4 items-center'>
         { (authentication_user.isAuthenticated && !authentication_user.isTeacher && !authentication_user.isAdmin) ? (
-         
            <>
            <Link to="/profile"><h3 className='self-center'>{authentication_user.name}</h3></Link>
            <button onClick={logout} className='bg-yellow-500 text-black px-4 py-2 rounded'>Logout</button>
          </>
         ) : (
           <>
+          <button onClick={()=>navigate('/teacher')} className='bg-red-600 text-white px-4 py-2 rounded'>Join as Mentor</button>
           <button onClick={() => navigate('/login')} className='bg-blue-500 text-white px-4 py-2 rounded'>Login</button>
           <button onClick={() => navigate('/signup')} className='bg-green-500 text-white px-4 py-2 rounded'>Signup</button>
         </>
         )}
     </div>
+
   </div>
   )
 }

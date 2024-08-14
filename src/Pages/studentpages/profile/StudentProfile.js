@@ -23,7 +23,7 @@ function StudentProfile() {
 
   const fetchUserData = async () => {
     try {
-      const res = await axios.get(baseURL + 'api/students/user_details/', {
+      const res = await axios.get(baseURL + '/api/students/user_details/', {
         headers: {
           authorization: `Bearer ${token}`,
           Accept: 'application/json',

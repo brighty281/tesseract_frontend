@@ -37,7 +37,11 @@ function Coursedetail() {
     const fetchCourse = async () => {
         console.log('hello....')
         try {
-          const response = await axios.get(`${baseURL}/teacherapp/course_view/${id}/`);
+          const response = await axios.get(`${baseURL}/teacherapp/course_view/${id}/`,{
+            headers: {
+              'Authorization': `Bearer ${token}`,
+            },
+          });
           const data=response.data
           console.log('data',data);
           setCourse({
